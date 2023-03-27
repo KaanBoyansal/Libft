@@ -89,12 +89,6 @@ int	ft_printf(const char *str, ...)
 	i = 0;
 	tmp = 0;
 	va_start(args, str);
-	if (str[i] == '%' && letter(str[i + 1]) && str[i] && str[i + 1] != '%')
-	{
-		write(1, &str[i + 1], 1);
-		tmp++;
-		i += 2;
-	}
 	tmp += ft_check(args, i, tmp, str);
 	va_end(args);
 	return (tmp);
